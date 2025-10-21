@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>আমার দেশ</title>
+    <link rel="icon" type="image" href="./amar desh favicon.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <style>
+    @font-face {
+      font-family: "myBanglaFont";
+      src: url(./fonts/SolaimanLipi.ttf);
+    }
+
+    * {
+      font-family: "myBanglaFont";
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background-color: #ffffff;
+      border-bottom: 2px solid #e0e0e0;
+      padding: 10px 0;
+    }
+
+    .header a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .header a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #e63946;
+      transition: width 0.3s ease;
+    }
+
+    .header a:hover {
+      color: #e63946;
+    }
+
+    .header a:hover::after {
+      width: 100%;
+    }
+
+    /* Article Section */
+    .article {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .article table {
+      width: 100%;
+      border-spacing: 20px;
+    }
+
+    .article td {
+      vertical-align: top;
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .article td:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .article h1 {
+      color: #222;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .article p {
+      color: #444;
+      text-align: justify;
+    }
+
+    /* "আরও দেখুন" Button */
+    .article a {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #e63946;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .article a:hover {
+      background-color: #c71c2b;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer-top {
+      background-color: #ffffff;
+      border-top: 2px solid #e0e0e0;
+      padding: 20px 0;
+    }
+
+    .footer-top table {
+      width: 100%;
+    }
+
+    .footer-top td {
+      vertical-align: top;
+      width: 50%;
+    }
+
+    .footer-top td:last-child {
+      padding-left: 20px;
+    }
+
+    .footer-top a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .footer-top a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #e63946;
+      transition: width 0.3s ease;
+    }
+
+    .footer-top a:hover {
+      color: #e63946;
+    }
+
+    .footer-top a:hover::after {
+      width: 100%;
+    }
+
+    /* Footer Icons */
+    .footer-icon a {
+      font-size: 18px;
+      color: #555;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-icon a:hover {
+      color: #e63946;
+      transform: scale(1.2);
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      background-color: #f8f9fa;
+      padding: 25px 0;
+      font-size: 14px;
+    }
+
+    .footer-bottom table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .footer-bottom td {
+      vertical-align: top;
+      width: 50%;
+      padding: 0 20px;
+    }
+
+    .footer-bottom .para-1 p,
+    .footer-bottom .para-2 p {
+      color: #333;
+      text-align: justify;
+      line-height: 1.8;
+    }
+
+    .footer-bottom a {
+      color: #333;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .footer-bottom a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #e63946;
+      transition: width 0.3s ease;
+    }
+
+    .footer-bottom a:hover {
+      color: #e63946;
+    }
+
+    .footer-bottom a:hover::after {
+      width: 100%;
+    }
+
+    /* Optional: make footer sections stack on small screens */
+    @media (max-width: 768px) {
+      .footer-bottom td {
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 10px 0;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- header start -->
+    <div class="header">
+      <table width="100%">
+        <tr>
+          <!-- Left (Logo) -->
+          <td align="left">
+            <a href="./home.html">
+              <img
+                src="./দৈনিক_আমার_দেশ-এর_লোগো.png"
+                width="150"
+                alt="amar-desh-logo"
+              />
+            </a>
+          </td>
+
+          <!-- Center (Menu links) -->
+          <td align="center">
+            <a href="#">সর্বশেষ</a>
+            <a href="#">জাতীয়</a>
+            <a href="#">রাজনীতি</a>
+            <a href="#">অর্থনীতি</a>
+            <a href="#">সারাদেশ</a>
+            <a href="#">বিশ্ব</a>
+            <a href="#">খেলা</a>
+            <a href="#">বিনোদন</a>
+          </td>
+
+          <!-- Right (Date) -->
+          <td align="right">
+            <span id="today-date">মঙ্গলবার, ২১ অক্টোবর ২০২৫</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- header end -->
+    <!-- article start -->
+    <div id="article-1" class="article">
+      <table>
+        <tr>
+          <td>
+            <img src="./image/article-1.jpg" width="600" alt="dr. yunus" />
+            <h1>নির্বাচন একটি যুদ্ধক্ষেত্র, আমাদের দায়িত্ব নিরপেক্ষ থাকা</h1>
+            <p>
+              অন্তর্বর্তী সরকারের প্রধান উপদেষ্টা বলেছেন, নির্বাচন একটি
+              যুদ্ধক্ষেত্র। এখানে যিনি শান্তি-শৃঙ্খলা বজায় রাখতে পারবেন, সে রকম
+              যোদ্ধাকেই আমরা বেছে নেবো। নির্বাচন শান্তিপূর্ণ ও নিরপেক্ষ করার
+              জন্য যা কিছু প্রয়োজন আমরা করব। মঙ্গলবার বিএনপির প্রতিনিধি দলের
+              সঙ্গে বৈঠকের পর তিনি এ কথা বলেন।
+              <br />
+              প্রধান উপদেষ্টা বিএনপি নেতৃবৃন্দকে বলেন, জনপ্রশাসন মন্ত্রণালয়ের
+              দায়িত্বপ্রাপ্ত উপদেষ্টা হিসেবে নির্বাচনের আগে প্রশাসনের যাবতীয়
+              রদবদল সরাসরি তার তত্ত্বাবধানে হবে। তিনি বলেন, জেলা প্রশাসক পদে
+              নিয়োগের জন্য একাধিক ‘ফিট লিস্ট’ থেকে যোগ্য কর্মকর্তাদের বাছাই করে
+              প্রত্যেককে নির্বাচনের আগে যথাযোগ্য স্থানে নিয়োগ দেওয়া হবে।
+            </p>
+          </td>
+
+          <td>
+            <img
+              src="./image/article-2.jpg"
+              width="450"
+              alt="phrarmacists of delta pharma"
+            />
+            <h1>কিডনি রোগীদের জন্য বাজারে এলো অর্ধেক দামের ওষুধ</h1>
+            <p>
+              কিডনি রোগের চিকিৎসায় সাম্প্রতিক সময়ে সবচেয়ে বেশি ব্যবহৃত ওষুধ
+              ফিনেরেনন, যার বাজারে মূল্য ১০ মিলিগ্রামের ট্যাবলেট ৮০ টাকা এবং ২০
+              মিলিগ্রামের ট্যাবলেট ১৫০ টাকা। ওষুধটি অনেক বেশি দামি হওয়ায় সাধারণ
+              রোগীরা প্রায়ই চিকিৎসকের ব্যবস্থাপত্রে দেওয়ার পরও খেতে পারেন না।
+              এমতাবস্থায় অর্ধেক দামে একই মানের ওষুধ বাজারে এনেছে ডেল্টা ফার্মা।
+              <br />
+
+              ওষুধ প্রস্তুতকারক প্রতিষ্ঠানটি বলছে, রোগীদের কথা চিন্তা করে ডেলটা
+              ফার্মা ওষুধটি বাজারে এনেছে। যার ১০ মিলিগ্রামের ট্যাবলেটের (Finmax
+              10) প্রতি ট্যাবলেটের দাম ৩০ টাকা এবং ২০ মিলিগ্রামের ট্যাবলেট
+              (Finmax 20) পাওয়া যাবে ৫০ টাকায়। যা বাজারে প্রচলিত অন্যান্য ওষুধের
+              দামের চেয়ে অর্ধেকেরও কম।
+            </p>
+          </td>
+          <td>
+            <img
+              src="./image/article-3.jpg"
+              width="400"
+              alt="book of primary-school"
+            />
+            <h1>বছরের শুরুতে মাধ্যমিকের বই পাওয়া নিয়ে শঙ্কা</h1>
+            <p>
+              বছরের প্রায় ১০ মাস পার হলেও মাধ্যমিক স্তরের বিনামূল্যের পাঠ্যবই
+              ছাপানোর কাজ শুরু হয়নি। এমনকি পাঠ্যবইয়ের কনটেন্টও পুরোপুরি প্রস্তুত
+              হয়নি; এখনো চলছে পরিবর্তন-পরিমার্জনের কাজ। এছাড়া ক্রয়-সংক্রান্ত
+              উপদেষ্টা পরিষদের অনুমোদনও মেলেনি এখনো।
+              <br />
+              এতে আগামী ১ জানুয়ারি মাধ্যমিক শিক্ষার্থীদের হাতে পাঠ্যবই পৌঁছানো
+              নিয়ে বড় ধরনের শঙ্কা তৈরি হয়েছে বলে জানিয়েছেন সংশ্লিষ্টরা।
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img
+              src="./image/article-4.jpg"
+              width="600"
+              alt="bashundhara kings arena stadium"
+            />
+            <h1>আন্তর্জাতিক ফুটবলে বাংলাদেশের নবসূচনা</h1>
+            <p>
+              আন্তর্জাতিক ফুটবলে নতুনভাবে যাত্রা শুরু করতে যাচ্ছে বাংলাদেশ।
+              নিরপেক্ষ ভেন্যু হিসেবে আন্তর্জাতিক ফুটবলে পদার্পণে আফগানিস্তানের
+              হোম ম্যাচ আয়োজন করতে যাচ্ছে বাংলাদেশ ফুটবল ফেডারেশন (বাফুফে)।
+              আগামী ১৮ নভেম্বর এএফসি এশিয়ান কাপ বাছাইপর্বের আফগানিস্তান বনাম
+              মিয়ানমার ম্যাচটি অনুষ্ঠিত হবে বসুন্ধরা কিংস অ্যারেনায়।
+              <br />
+              একই দিনে ভারতের বিপক্ষে এএফসি বাছাইয়ে হোম ম্যাচ খেলবে বাংলাদেশ।
+              পল্টনের জাতীয় স্টেডিয়ামে যখন প্রতিবেশী দেশটির বিপক্ষে লড়বেন
+              হামজা-জামালরা, তখন বসুন্ধরা কিংস অ্যারেনার নাম উঠে যাবে নিরপেক্ষ
+              ভেন্যুর তালিকায়।
+            </p>
+          </td>
+
+          <td>
+            <img src="./image/article-5.jpg" width="450" alt="gold bars" />
+            <h1>১০ বছরের মধ্যে স্বর্ণের দামে সবচেয়ে বড় পতন</h1>
+            <p>
+              বিশ্ববাজারে মঙ্গলবার (২১ অক্টোবর) স্বর্ণে দামে বড় ধরনের পতন ঘটেছে।
+              যদিও একদিন আগে রেকর্ড উচ্চতায় পৌঁছেছিল মূল্যবান এই ধাতুটির মূল্য।
+              এদিন ৫ শতাংশেরও বেশি কমে গেছে বলে খবর দিয়েছে আন্তর্জাতিক
+              গণমাধ্যমগুলো।
+            </p>
+          </td>
+          <td>
+            <img src="./image/article-6.jpg" width="400" alt="salman shah" />
+            <h1>২৯ বছর পর সালমান শাহ হত্যা মামলা, আসামি যারা</h1>
+            <p>
+              আদালতের নির্দেশে চিত্রনায়ক সালমান শাহর মৃত্যুর ২৯ বছর পর হত্যা
+              মামলা দায়ের করা হলো। মামলায় অভিযুক্ত করা হয়েছে নায়ক সালমান শাহর
+              স্ত্রী সামিরা হকসহ মোট ১১ জনকে। গতকাল মধ্যরাতে রাজধানীর রমনা থানায়
+              এই মামলা করা হয়েছে। জানা গেছে, সোমবার আদালতের নির্দেশে সালমান শাহর
+              মৃত্যুর ঘটনায় পুনঃতদন্তের নির্দেশ দেওয়ার পর ২৪ ঘণ্টা না পেরোতেই এই
+              মামলা দায়ের করেন সালমান শাহের মামা আলমগীর কুমকুম।
+              <br />
+              মামলার এজাহারে প্রথম আসামি হিসেবে নাম রয়েছে সামিরা হকের, এরপর
+              রয়েছেন শাশুড়ি লতিফা হক লুসি, ব্যবসায়ী আজিজ মোহাম্মদ, চলচ্চিত্রের
+              খলনায়ক ডন, রেজভী আহমেদ ফরহাদ, নজরুল শেখ, ডেভিড, রাবেয়া সুলতানা
+              রুবি, মোস্তাক ওয়াইদ এবং সালমানের বাসার গৃহকর্মী আবুল হোসেন খান।
+              মোট অভিযুক্ত ১১ জনের পাশাপাশি উল্লেখ করা হয়েছে অজ্ঞাতনামা আরো
+              কয়েকজনের নাম।
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center" colspan="3">
+            <a href="#">আরও দেখুন</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- article end -->
+
+    <!-- footer start -->
+    <div class="footer-top">
+      <table width="100%">
+        <tr>
+          <!-- Left side -->
+          <td align="left">
+            <a href="#">আমার দেশ</a>
+            <a href="#">যোগাযোগ</a>
+            <a href="#">শর্তাবলি ও নীতিমালা</a>
+            <a href="#">গোপনীয়তা নীতি</a>
+            <a href="#">ডিএমসিএ</a>
+          </td>
+
+          <!-- Right side -->
+
+          <td align="right">
+            <div class="footer-icon">
+              <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-facebook"></i></a
+              >&nbsp;
+              <a href="https://x.com/tweeter?lang=en" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i></a
+              >&nbsp;
+              <a href="https://tiktok.com" target="_blank">
+                <i class="fa-brands fa-tiktok"></i></a
+              >&nbsp;
+              <a href="https://whatsapp.com" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i></a
+              >&nbsp;
+              <a href="https://pinterest.com" target="_blank">
+                <i class="fa-brands fa-pinterest"></i></a
+              >&nbsp;
+              <a href="https://www.youtube.com/" target="_blank">
+                <i class="fa-brands fa-youtube"></i></a
+              >&nbsp;
+              <a href="https://www.linkedin.com/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i></a
+              >&nbsp;
+              <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram"></i></a
+              >&nbsp;
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer-bottom">
+      <table width="100%">
+        <tr>
+          <!-- Left side -->
+          <td align="left">
+            <div class="para-1">
+              <p>
+                স্বত্ব: ©️ আমার দেশ | সম্পাদক ও প্রকাশক, মাহমুদুর রহমান মাহমুদুর
+                রহমান কর্তৃক ঢাকা ট্রেড সেন্টার (৮ম ফ্লোর), ৯৯, কাজী নজরুল ইসলাম
+                অ্যাভিনিউ, কারওয়ান বাজার, ঢাকা-১২১৫ থেকে প্রকাশিত এবং আমার দেশ
+                পাবলিকেশন লিমিটেড প্রেস, ৪৪৬/সি ও ৪৪৬/ডি, তেজগাঁও শিল্প এলাকা,
+                ঢাকা-১২০৮ থেকে মুদ্রিত।
+              </p>
+            </div>
+          </td>
+          <td align="right">
+            <div class="para-2">
+              <p>
+                সম্পাদকীয় ও বাণিজ্য বিভাগ: ঢাকা ট্রেড সেন্টার, ৯৯, কাজী নজরুল
+                ইসলাম অ্যাভিনিউ, কারওয়ান বাজার, ঢাকা-১২১৫। ফোন: ০২-৫৫০১২২৫০।
+                ই-মেইল: info@dailyamardesh.com বার্তা: ফোন: ০৯৬৬৬-৭৪৭৪০০।
+                ই-মেইল: news@dailyamardesh.com বিজ্ঞাপন: ফোন: +৮৮০-১৭১৫-০২৫৪৩৪ ।
+                ই-মেইল: ad@dailyamardesh.com সার্কুলেশন: ফোন: +৮৮০-০১৮১৯-৮৭৮৬৮৭
+                । ই-মেইল: circulation@dailyamardesh.com
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- footer end -->
+  </body>
+</html>
