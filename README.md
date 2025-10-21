@@ -42,8 +42,8 @@ It focuses on clean structure, responsive design, and proper alignment of footer
 
 ## 🧑‍💻 Author
 
-Hasnat Zaman Khan
-🔗 GitHub Profile
+Hasnat Zaman Porosh
+🔗[GitHub Profile](https://github.com/poroooosh)
 
 ---
 ## 📜 License
