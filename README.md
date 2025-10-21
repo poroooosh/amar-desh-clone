@@ -40,5 +40,14 @@ It focuses on clean structure, responsive design, and proper alignment of footer
 
 ---
 
-## 📂 Folder Structure
+## 🧑‍💻 Author
+
+Hasnat Zaman Khan
+🔗 GitHub Profile
+
+---
+## 📜 License
+
+This project is open-source and available under the MIT License
+---
 
