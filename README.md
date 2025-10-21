@@ -36,7 +36,7 @@ It focuses on clean structure, responsive design, and proper alignment of footer
 | **HTML5** | Structure and content |
 | **CSS3** | Styling and layout |
 | **Font Awesome** | Icons for social links |
-| **Google Fonts** | Clean typography |
+| **Unicode Bangla Font** | Clean typography |
 
 ---
 
