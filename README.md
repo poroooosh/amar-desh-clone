@@ -39,8 +39,9 @@ It focuses on clean structure, responsive design, and proper alignment of footer
 | **Unicode Bangla Font** | Clean typography |
 
 ---
-## Screenshot
-<img width="1640" height="1671" alt="venerable-quokka-395d7e netlify app" src="https://github.com/user-attachments/assets/ca22a759-040b-4d22-b10d-7980d136f235" />
+## 🖥️ ⛶ Screenshot
+
+<img width="1903" height="1603" alt="Screen Shot 2025-10-22 at 04 55 54-fullpage" src="https://github.com/user-attachments/assets/c39a5076-4730-493a-9bd5-4cce1fec3bdd" />
 
 ---
 
